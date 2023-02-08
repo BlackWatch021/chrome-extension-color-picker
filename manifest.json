@@ -1,0 +1,21 @@
+{
+  "name": "Color Picker",
+  "description": "This allows you to pick any color from the browser",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "/images/picker_32.png"
+  },
+
+  "icons": {
+    "16": "/images/picker_16.png",
+    "32": "/images/picker_32.png",
+    "48": "/images/picker_48.png"
+  }
+}
