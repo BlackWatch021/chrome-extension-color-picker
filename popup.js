@@ -13,11 +13,24 @@ btn.addEventListener("click", async () => {
       const [data] = injectedResults;
       if (data.result) {
         const color = data.result.sRGBHex;
+
+        //copy to clipboard
+        try {
+          await navigator.clipboard.writeText(color);
+        } catch (err) {
+          console.error(err);
+        }
+
+        //These styling can be done in .css file.
         (colorGrid.style.backgroundColor = color),
-          (colorGrid.style.width = "70px");
-        colorGrid.style.height = "30px";
+          (colorGrid.style.width = "30px");
+        colorGrid.style.height = "10px";
+        colorGrid.style.display = "inline-block";
         colorGrid.style.margin = "auto";
+        colorGrid.style.border = ".1px solid black";
         colorValue.innerHTML = color;
+        colorValue.style.marginLeft = "5px";
+        colorValue.style.fontWeight = "700";
       }
     }
   );
